@@ -42,11 +42,12 @@ Do not put names or other identifying information in public evaluation files. Pr
 
 ```sh
 node dist/src/cli.js annotations.jsonl --output results.json
+node dist/src/cli.js annotations-with-run-metadata.jsonl --leaderboard --output leaderboard.json
 ```
 
 Or call the library:
 
-```python
+```ts
 import { evaluateFile } from "turnsafely";
 
 const results = await evaluateFile("annotations.jsonl");
@@ -58,6 +59,8 @@ WER and CER are aggregate error counts divided by total reference tokens or char
 ## Dataset and licence boundaries
 
 The package contains evaluation code and synthetic test fixtures only. It does not download or redistribute audio. AfriSpeech-200 is licensed CC BY-NC-SA 4.0, as stated in its paper. Anyone using that dataset must obtain it from the dataset publisher and comply with its terms. This project's Apache-2.0 licence applies to the code only. Dataset terms may restrict commercial evaluation use.
+
+The local-manifest adapter joins publisher-authorized AfriSpeech metadata to hypotheses without copying audio or speaker IDs. It requires a caller-supplied dataset revision and split, and does not download files. Leaderboard output requires system ID/version, dataset ID/revision, and split on every row; it reports supplied runs and does not invent benchmark scores.
 
 ## Research context and scope
 

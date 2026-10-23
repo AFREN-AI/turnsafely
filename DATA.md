@@ -8,6 +8,8 @@ Only the scoring code and synthetic unit-test cases are included. No audio, part
 
 Obtain each dataset from its publisher. Confirm its current licence, research ethics conditions, consent scope, and permitted publication and commercial uses before evaluation. In particular, AfriSpeech-200 is CC BY-NC-SA 4.0. Do not bundle copies, derived audio, or dataset transcripts in this repository.
 
+The AfriSpeech adapter joins a local publisher-authorized manifest to hypothesis JSONL by `audio_id`. It emits reference text for evaluation but excludes speaker identifiers and does not fetch files. Confirm current publisher conditions before use; non-commercial terms may prohibit commercial evaluation.
+
 ## Reviewer annotations
 
 The scorer reports only labels supplied in the input rows. Before using or publishing metrics, document:

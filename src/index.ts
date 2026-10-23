@@ -1,4 +1,6 @@
 import { readFile } from "node:fs/promises";
+export { importAfriSpeechAnnotations } from "./afrispeech.js";
+export { createLeaderboard, type LeaderboardEntry } from "./leaderboard.js";
 
 export type Annotation = {
   reference: string;
@@ -9,6 +11,11 @@ export type Annotation = {
   reference_speaker?: string;
   predicted_speaker?: string;
   decision_critical_error?: boolean;
+  system_id?: string;
+  system_version?: string;
+  dataset_id?: string;
+  dataset_revision?: string;
+  split?: string;
 };
 
 type EditCounts = { substitutions: number; deletions: number; insertions: number };
